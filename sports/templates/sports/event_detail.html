@@ -1,0 +1,108 @@
+{% extends "sports/base.html" %}
+
+{% block title %}
+{{ event.event_name }} — Details
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-9">
+
+        <div class="card shadow-sm">
+
+            <div class="detail-hero">
+                <p class="hero-eyebrow mb-2">{{ event.sport }}</p>
+                <h2 class="mb-0">{{ event.event_name }}</h2>
+            </div>
+
+            <div class="card-body p-4 p-md-5">
+
+                <p class="text-muted mb-4">
+                    {{ event.description }}
+                </p>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="detail-info-item">
+                            <i class="bi bi-calendar-event"></i>
+                            <div>
+                                <div class="label">Date</div>
+                                <div class="fw-semibold">{{ event.date }}</div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info-item">
+                            <i class="bi bi-clock"></i>
+                            <div>
+                                <div class="label">Time</div>
+                                <div class="fw-semibold">{{ event.time }}</div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info-item">
+                            <i class="bi bi-geo-alt"></i>
+                            <div>
+                                <div class="label">Location</div>
+                                <div class="fw-semibold">{{ event.location }}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="detail-info-item">
+                            <i class="bi bi-people"></i>
+                            <div>
+                                <div class="label">Max Spots</div>
+                                <div class="fw-semibold">{{ event.maximum_participants }}</div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info-item">
+                            <i class="bi bi-cash-coin"></i>
+                            <div>
+                                <div class="label">Fee</div>
+                                <div class="fw-semibold">₹{{ event.registration_fee }}</div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info-item">
+                            <i class="bi bi-trophy"></i>
+                            <div>
+                                <div class="label">Sport Category</div>
+                                <div class="fw-semibold">{{ event.sport }}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'register_event' event.id %}"
+                       class="btn btn-neon btn-lg px-4">
+                        <i class="bi bi-check-circle me-2"></i>Register Now
+                    </a>
+
+                    <a href="{% url 'events' %}"
+                       class="btn btn-outline-secondary btn-lg px-4">
+                        <i class="bi bi-arrow-left me-2"></i>Back to Events
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,571 @@
+/* ==========================================================
+   IRONCORE — dark, high-contrast fitness studio theme
+   ========================================================== */
+
+:root {
+  --ink: #0a0a0a;
+  --charcoal: #141414;
+  --charcoal-2: #1c1c1c;
+  --line: #2b2b2b;
+  --steel: #b8bcc2;
+  --steel-dim: #7c8087;
+  --white: #f4f4f4;
+  --neon: #ff5b1f;
+  --neon-dim: #cc3f0d;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: var(--ink);
+  color: var(--white);
+  letter-spacing: 0.01em;
+
+  
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand-font {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: var(--white);
+}
+
+a {
+  color: var(--neon);
+}
+
+.text-muted, p.text-muted, small.text-muted {
+  color: var(--steel-dim) !important;
+}
+
+hr {
+  border-color: var(--line);
+  opacity: 1;
+}
+
+/* ---------- Navbar ---------- */
+.app-navbar {
+  background: var(--ink);
+  border-bottom: 2px solid var(--neon);
+}
+
+.app-navbar .navbar-brand {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--white) !important;
+}
+
+.app-navbar .navbar-brand .accent {
+  color: var(--neon);
+}
+
+.app-navbar .nav-link {
+  color: var(--steel);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color 0.15s ease;
+}
+
+.app-navbar .nav-link:hover {
+  color: var(--neon);
+}
+
+.user-chip {
+  background: var(--charcoal-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.9rem;
+  color: var(--steel);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+
+.btn-primary,
+.btn-neon {
+  background-color: var(--neon);
+  border-color: var(--neon);
+  color: #0a0a0a;
+}
+
+.btn-primary:hover,
+.btn-neon:hover {
+  background-color: var(--neon-dim);
+  border-color: var(--neon-dim);
+  color: #0a0a0a;
+}
+
+.btn-outline-light {
+  border: 1px solid var(--steel-dim);
+  color: var(--white);
+}
+
+.btn-outline-light:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: #0a0a0a;
+}
+
+.btn-success {
+  background-color: var(--neon);
+  border-color: var(--neon);
+  color: #0a0a0a;
+}
+
+.btn-success:hover {
+  background-color: var(--neon-dim);
+  border-color: var(--neon-dim);
+}
+
+.btn-secondary, .btn-outline-secondary {
+  border: 1px solid var(--line);
+  color: var(--steel);
+}
+
+.btn-outline-secondary:hover {
+  border-color: var(--neon);
+  color: var(--neon);
+  background: transparent;
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+  position: relative;
+  background:
+    linear-gradient(120deg, rgba(10,10,10,0.75), rgba(10,10,10,0.92)),
+    repeating-linear-gradient(135deg, #1a1a1a 0, #1a1a1a 2px, #0e0e0e 2px, #0e0e0e 40px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 4.5rem 2.5rem;
+  overflow: hidden;
+}
+
+.hero-eyebrow {
+  color: var(--neon);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  line-height: 1.05;
+}
+
+.stat-pill {
+  border: 1px solid var(--line);
+  background: var(--charcoal);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+}
+
+.stat-pill .stat-number {
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  color: var(--neon);
+}
+
+.stat-pill .stat-label {
+  color: var(--steel);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Coach strip ---------- */
+.coach-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(160deg, #2a2a2a, #0d0d0d);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--steel-dim);
+  font-size: 2rem;
+}
+
+.coach-card {
+  background: var(--charcoal);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 100%;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.coach-card:hover {
+  border-color: var(--neon);
+  transform: translateY(-3px);
+}
+
+.coach-card .coach-body {
+  padding: 1.1rem 1.25rem 1.3rem;
+}
+
+.coach-tag {
+  display: inline-block;
+  background: rgba(255, 91, 31, 0.12);
+  color: var(--neon);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Goal / program tabs ---------- */
+.goal-tab {
+  border: 1px solid var(--line);
+  background: var(--charcoal);
+  color: var(--steel);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.goal-tab.active {
+  background: var(--neon);
+  border-color: var(--neon);
+  color: #0a0a0a;
+}
+
+/* ---------- Event / class cards ---------- */
+.event-card {
+  background: var(--charcoal);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 100%;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.event-card:hover {
+  border-color: var(--neon);
+  transform: translateY(-4px);
+}
+
+.event-card .event-banner {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--neon);
+  background:
+    linear-gradient(160deg, #202020, #0c0c0c);
+  border-bottom: 1px solid var(--line);
+}
+
+.event-card .card-body {
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.sport-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(184, 188, 194, 0.12) !important;
+  color: var(--steel) !important;
+}
+
+/* ---------- Story / testimonial cards ---------- */
+.story-card {
+  background: var(--charcoal);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.story-quote {
+  font-size: 0.95rem;
+  color: var(--steel);
+  font-style: italic;
+  border-left: 3px solid var(--neon);
+  padding-left: 1rem;
+  margin: 0.75rem 0;
+}
+
+.result-stat {
+  display: inline-block;
+  font-family: "Anton", sans-serif;
+  color: var(--neon);
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+}
+
+/* ---------- Detail page ---------- */
+.detail-hero {
+  background: linear-gradient(160deg, #1e1e1e, #0a0a0a);
+  border-bottom: 2px solid var(--neon);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: 2.5rem;
+}
+
+.detail-info-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-info-item:last-child {
+  border-bottom: none;
+}
+
+.detail-info-item i {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 91, 31, 0.1);
+  color: var(--neon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.detail-info-item .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel-dim);
+  margin-bottom: 0.1rem;
+}
+
+/* ---------- CTA banner ---------- */
+.cta-banner {
+  background:
+    linear-gradient(120deg, rgba(255,91,31,0.14), rgba(10,10,10,0.9)),
+    repeating-linear-gradient(135deg, #1a1a1a 0, #1a1a1a 2px, #0e0e0e 2px, #0e0e0e 40px);
+  border: 1px solid var(--neon-dim);
+  border-radius: var(--radius-md);
+  padding: 3rem 2rem;
+}
+
+/* ---------- Auth forms ---------- */
+.auth-card {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.auth-card .auth-side {
+  background: linear-gradient(170deg, #1c1c1c, #050505);
+  border-right: 1px solid var(--line);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-card .auth-form {
+  background: var(--charcoal);
+  padding: 2.5rem;
+}
+
+.form-label {
+  color: var(--steel);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.form-control {
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  padding: 0.65rem 0.9rem;
+}
+
+.form-control::placeholder {
+  color: var(--steel-dim);
+}
+
+.form-control:focus {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--neon);
+  box-shadow: 0 0 0 0.2rem rgba(255, 91, 31, 0.18);
+}
+
+.input-icon-wrap {
+  position: relative;
+}
+
+.input-icon-wrap i {
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  transform: translateY(-50%);
+  color: var(--steel-dim);
+}
+
+.input-icon-wrap .form-control {
+  padding-left: 2.5rem;
+}
+
+/* ---------- Dashboard ---------- */
+.stat-icon-lg {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 91, 31, 0.1);
+  color: var(--neon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.dash-stat-card {
+  background: var(--charcoal);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.dash-stat-card .stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  background: rgba(255, 91, 31, 0.1);
+  color: var(--neon);
+}
+
+.feature-card {
+  background: var(--charcoal);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  height: 100%;
+}
+
+.table {
+  color: var(--white);
+  border-color: var(--line);
+}
+
+.table thead.table-dark th {
+  background-color: #050505;
+  border-color: var(--line);
+  color: var(--steel);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--white);
+}
+
+.table-bordered {
+  border-color: var(--line);
+}
+
+.table-bordered > :not(caption) > * > * {
+  border-color: var(--line);
+}
+
+.badge.bg-success { background-color: var(--neon) !important; color: #0a0a0a !important; }
+.badge.bg-warning { background-color: var(--steel) !important; color: #0a0a0a !important; }
+.badge.bg-danger { background-color: #5c5c5c !important; color: var(--white) !important; }
+.badge.bg-secondary { background-color: var(--line) !important; color: var(--steel) !important; }
+
+.card, .alert {
+  background-color: var(--charcoal);
+  border: 1px solid var(--line);
+  color: var(--white);
+}
+
+.alert-info { border-color: var(--neon); }
+
+/* ---------- Footer ---------- */
+.app-footer {
+  background: #050505;
+  border-top: 1px solid var(--line);
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 0.55rem;
+}
+
+.footer-links a {
+  color: var(--steel);
+  text-decoration: none;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.footer-links a:hover {
+  color: var(--neon);
+}
+
+/* ---------- Section titles ---------- */
+.section-title {
+  position: relative;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--neon);
+}
+
+.section-kicker {
+  color: var(--neon);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+}

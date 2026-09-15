@@ -1,0 +1,179 @@
+{% extends "sports/base.html" %}
+
+{% block title %}
+Sports Events
+{% endblock %}
+
+{% block content %}
+
+<p class="section-kicker mb-2">Upcoming</p>
+<h2 class="section-title">Sports Events</h2>
+<p class="text-muted mb-4">Pick an event, check the details, and register to participate.</p>
+
+<div class="row g-4 mt-1">
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-dribbble"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Football</span>
+                <h4>Football Tournament</h4>
+                <p class="text-muted small mb-3">
+                    An 11-a-side knockout tournament open to all skill levels.
+                </p>
+                <a href="{% url 'event_detail' 1 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-bicycle"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Cycling</span>
+                <h4>Cycling Competition</h4>
+                <p class="text-muted small mb-3">
+                    A timed road race for individual riders across a scenic route.
+                </p>
+                <a href="{% url 'event_detail' 4 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-lightning-fill"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Athletics</span>
+                <h4>100 Meter</h4>
+                <p class="text-muted small mb-3">
+                    A short sprint event testing pure speed and reaction time.
+                </p>
+                <a href="{% url 'event_detail' 2 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-lightning-fill"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Athletics</span>
+                <h4>200 Meter</h4>
+                <p class="text-muted small mb-3">
+                    A sprint event combining speed with pacing around the bend.
+                </p>
+                <a href="{% url 'event_detail' 3 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-arrows-angle-expand"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Athletics</span>
+                <h4>Long Jump</h4>
+                <p class="text-muted small mb-3">
+                    A field event measuring how far athletes can leap from a run-up.
+                </p>
+                <a href="{% url 'event_detail' 5 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-shield-fill"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Martial Arts</span>
+                <h4>Karate</h4>
+                <p class="text-muted small mb-3">
+                    A kata and sparring event open to multiple belt categories.
+                </p>
+                <a href="{% url 'event_detail' 6 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-people-fill"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Team Sport</span>
+                <h4>Kabaddi</h4>
+                <p class="text-muted small mb-3">
+                    A fast-paced, high-contact team sport played in a knockout format.
+                </p>
+                <a href="{% url 'event_detail' 7 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-circle"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Team Sport</span>
+                <h4>Volleyball</h4>
+                <p class="text-muted small mb-3">
+                    A 6-a-side indoor tournament with round-robin group stages.
+                </p>
+                <a href="{% url 'event_detail' 8 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="event-card card">
+            <div class="event-banner">
+                <i class="bi bi-feather"></i>
+            </div>
+            <div class="card-body">
+                <span class="badge sport-badge mb-2">Racquet Sport</span>
+                <h4>Badminton</h4>
+                <p class="text-muted small mb-3">
+                    A singles and doubles tournament for players of all levels.
+                </p>
+                <a href="{% url 'event_detail' 9 %}" class="btn btn-outline-light w-100">
+                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

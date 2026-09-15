@@ -1,0 +1,138 @@
+{% extends "sports/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+    <div class="stat-icon-lg">
+        <i class="bi bi-person-fill"></i>
+    </div>
+    <div>
+        <h2 class="mb-0">Welcome back, {{ user.username }}</h2>
+        <p class="text-muted mb-0">Here's where your training stands.</p>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-4">
+        <div class="dash-stat-card">
+            <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+            <div class="text-muted small text-uppercase" style="letter-spacing:0.05em; font-size:0.75rem;">Registered Events</div>
+            <h3 class="mb-0">{{ registrations|length }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dash-stat-card">
+            <div class="stat-icon"><i class="bi bi-shield-check"></i></div>
+            <div class="text-muted small text-uppercase" style="letter-spacing:0.05em; font-size:0.75rem;">Account Status</div>
+            <h3 class="mb-0">Active</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dash-stat-card">
+            <div class="stat-icon"><i class="bi bi-compass"></i></div>
+            <div class="text-muted small text-uppercase mb-1" style="letter-spacing:0.05em; font-size:0.75rem;">Explore More</div>
+            <a href="{% url 'events' %}" class="fw-bold text-decoration-none" style="color:var(--neon);">
+                Browse Events <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="feature-card p-4">
+
+    <h4 class="mb-3"><i class="bi bi-list-check me-2"></i>My Registered Events</h4>
+
+    {% if registrations %}
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-striped align-middle">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Sport</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Fee</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for registration in registrations %}
+
+                    <tr>
+                        <td class="fw-semibold">
+                            {{ registration.event.event_name }}
+                        </td>
+
+                        <td>
+                            {{ registration.event.sport }}
+                        </td>
+
+                        <td>
+                            {{ registration.event.date }}
+                        </td>
+
+                        <td>
+                            {{ registration.event.time }}
+                        </td>
+
+                        <td>
+                            {{ registration.event.location }}
+                        </td>
+
+                        <td>
+                            ₹{{ registration.event.registration_fee }}
+                        </td>
+
+                        <td>
+                            {% if registration.status == "Confirmed" or registration.status == "Approved" %}
+                                <span class="badge bg-success">{{ registration.status }}</span>
+                            {% elif registration.status == "Pending" %}
+                                <span class="badge bg-warning">{{ registration.status }}</span>
+                            {% elif registration.status == "Cancelled" or registration.status == "Rejected" %}
+                                <span class="badge bg-danger">{{ registration.status }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ registration.status }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center py-5">
+            <i class="bi bi-calendar-x display-4 mb-3 d-block" style="color:var(--steel-dim);"></i>
+            <h5>No events yet</h5>
+            <p class="text-muted mb-4">
+                You have not registered for any sports events yet. Browse what's
+                available and sign up for your first event.
+            </p>
+
+            <a href="{% url 'events' %}" class="btn btn-neon px-4">
+                <i class="bi bi-calendar-event me-2"></i>Browse Sports Events
+            </a>
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
